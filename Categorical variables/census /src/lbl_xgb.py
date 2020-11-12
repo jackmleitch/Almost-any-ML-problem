@@ -41,7 +41,8 @@ def run(fold):
     x_valid = df_valid[features].values
 
     model = xgb.XGBClassifier(
-        n_jobs=-1
+        n_jobs=-1,
+        max_depth=7
     )
     model.fit(x_train, df_train.income.values)
 
